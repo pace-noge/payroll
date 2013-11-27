@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://localhost:81/payroll/app/#/karyawan -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{border-spacing:1px 1px;-ms-zoom:1.0001;}.ng-animate-active{border-spacing:0px 0px;-ms-zoom:1;}</style>
+  <title>Payroll System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="http://localhost:81/payroll/app/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="http://localhost:81/payroll/app/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="http://localhost:81/payroll/public/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://localhost:81/payroll/public/css/datepick.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+<style>
+    body {
+        padding-top: 70px;
+    }
+
+    .datepicker {
+    z-index:1051 !important;
+}
+
+
+</style></head>
+
+<body style="" cz-shortcut-listen="true" class="">
+
+
+<!-- navbar -->
+<div class="nav navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+        <a href="http://localhost:81/payroll/app/#" class="navbar-brand">Payroll System</a>
+    </div>
+    <p class="navbar-text navbar-right">Signed in as Nasa<span class="caret"></span></p>
+</div>
+<!-- end of navbar -->
+
+<div class="container ng-scope" ng-app="payrollApp">
+    <div class="row">
+
+        <!-- sidebar -->
+        <div class="col-md-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Menu</h3>
+                </div>
+                <div class="panel-body">
+
+                    <ul class="nav nav-pills nav-stacked" id="nav_samping">
+                        <li id="karyawan">
+                            <a href="./Payroll System_files/Payroll System.htm">
+                              <span class="glyphicon glyphicon-user pull-right"></span>
+                                 Data Karyawan
+                            </a>
+                        </li>
+                        <li id="golongan">
+                           <a href="http://localhost:81/payroll/app/#">
+                             <span class="glyphicon glyphicon-book pull-right"></span>
+                             Setup Golongan
+                           </a>
+                        </li>
+                        <li id="lembur">
+                            <a href="http://localhost:81/payroll/app/#/lembur">
+                               <span class="glyphicon glyphicon-file pull-right"></span>
+                               Setup Lembur
+                            </a>
+                        </li>
+                        <li id="prestasi">
+                            <a href="http://localhost:81/payroll/app/#">
+                                <span class="glyphicon glyphicon-file pull-right"></span>
+                                    Form Prestasi
+                                </a>
+                        </li>
+                        <li id="laporan">
+                            <a href="http://localhost:81/payroll/app/#">
+                                <span class="glyphicon glyphicon-list-alt pull-right"></span>
+                                Laporan
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <!-- end of sidebar -->
+
+        <!-- content -->
+        <!-- ngView:  --><div class="col-md-9 ng-scope" ng-view=""><div ng-controller="karyawanListCtrl" class="ng-scope">
+  <div class="well well-sm">
+     <div class="row">
+        <div class="col-xs-4 pull-right">
+          <input ng-model="filter" class="form-control input-sm ng-pristine ng-valid" placeholder="filter data karyawan…">
+        </div>
+     </div>
+  </div>
+  <table class="table table-striped table-bordered table-hover">
+     <tbody><tr class="success">
+       <th>NIK</th>
+       <th>Nama</th>
+       <th>Alamat</th>
+       <th>Telp</th>
+       <th><a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#tambahKaryawan">
+         <span class="glyphicon glyphicon-plus">Tambah</span></a></th>
+     </tr>
+     <!-- ngRepeat: karyawan in daftar_karyawan | filter:filter --><tr ng-repeat="karyawan in daftar_karyawan | filter:filter" class="ng-scope">
+       <td class="ng-binding">001</td>
+       <td class="ng-binding">Himawan</td>
+       <td class="ng-binding">Jl. Mangga 34 Banguntapan</td>
+       <td class="ng-binding">0274123412</td>
+       <td><a href="http://localhost:81/payroll/app/#/karyawan/001" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span> Detail</a>&nbsp;</td>
+     </tr><!-- end ngRepeat: karyawan in daftar_karyawan | filter:filter --><tr ng-repeat="karyawan in daftar_karyawan | filter:filter" class="ng-scope">
+       <td class="ng-binding">002</td>
+       <td class="ng-binding">Umar</td>
+       <td class="ng-binding">Jl. Embar 55 Yogyakarta</td>
+       <td class="ng-binding">027411223344</td>
+       <td><a href="http://localhost:81/payroll/app/#/karyawan/002" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span> Detail</a>&nbsp;</td>
+     </tr><!-- end ngRepeat: karyawan in daftar_karyawan | filter:filter --><tr ng-repeat="karyawan in daftar_karyawan | filter:filter" class="ng-scope">
+       <td class="ng-binding">003</td>
+       <td class="ng-binding">H. Damijo</td>
+       <td class="ng-binding">Jl. Suratmaja 34, Yogya</td>
+       <td class="ng-binding">0274928472</td>
+       <td><a href="http://localhost:81/payroll/app/#/karyawan/003" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-pencil"></span> Detail</a>&nbsp;</td>
+     </tr><!-- end ngRepeat: karyawan in daftar_karyawan | filter:filter -->
+  </tbody></table>
+
+  <!-- modal nambah karyawan -->
+  <div class="modal fade" id="tambahKaryawan" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div ng-controller="tmbhKaryawanCtrl" class="ng-scope">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Tambah Karyawan</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+             <form class="form-inline ng-pristine ng-valid" role="form" method="post" action="http://localhost:81/payroll/app/php/tambah_karyawan.php" enctype="multipart/form-data">
+               <table class="col-md-10">
+                 <tbody><tr>
+                   <td>Nik</td><td>:</td><td><input type="text" size="5" name="nik" class="form-control" readonly="" value="004"></td>
+                 </tr>
+                 <tr>
+                   <td>Nama</td><td>:</td><td><input type="text" name="nama" class="form-control"></td>
+                 </tr>
+                 <tr>
+                   <td>Telepon</td><td>:</td><td><input type="text" name="tlp" class="form-control"></td>
+                 </tr>
+                 <tr>
+                   <td>Alamat</td><td>:</td><td><textarea name="alamat" class="form-control"></textarea></td>
+                 </tr>
+                 <tr>
+                   <td>Jabatan</td><td>:</td>
+                   <td>
+                      <select ng-model="karyawan.jabatan" class="form-control ng-pristine ng-valid" name="jabatan">
+                       <option value="">-- Pilih Jabatan --</option>
+                       <!-- ngRepeat: jabatan in select_jabatan_sub.jabatan --><option ng-repeat="jabatan in select_jabatan_sub.jabatan" value="01" class="ng-scope ng-binding">Direktur Utama</option><!-- end ngRepeat: jabatan in select_jabatan_sub.jabatan --><option ng-repeat="jabatan in select_jabatan_sub.jabatan" value="02" class="ng-scope ng-binding">Manajer Pemasaran</option><!-- end ngRepeat: jabatan in select_jabatan_sub.jabatan --><option ng-repeat="jabatan in select_jabatan_sub.jabatan" value="03" class="ng-scope ng-binding">Manajer Personalia</option><!-- end ngRepeat: jabatan in select_jabatan_sub.jabatan -->
+                      </select>
+                   </td>
+                 </tr>
+
+                <tr>
+                   <td>Sub Golongan</td><td>:</td>
+                   <td>
+                      <select ng-model="karyawan.gol_sub" class="form-control ng-pristine ng-valid" name="gol_sub">
+                       <option value="">Pilih Sub Golongan</option>
+                       <!-- ngRepeat: sub in select_jabatan_sub.golongan_sub --><option ng-repeat="sub in select_jabatan_sub.golongan_sub" value="1" class="ng-scope ng-binding">A</option><!-- end ngRepeat: sub in select_jabatan_sub.golongan_sub --><option ng-repeat="sub in select_jabatan_sub.golongan_sub" value="2" class="ng-scope ng-binding">B</option><!-- end ngRepeat: sub in select_jabatan_sub.golongan_sub --><option ng-repeat="sub in select_jabatan_sub.golongan_sub" value="3" class="ng-scope ng-binding">C</option><!-- end ngRepeat: sub in select_jabatan_sub.golongan_sub --><option ng-repeat="sub in select_jabatan_sub.golongan_sub" value="4" class="ng-scope ng-binding">X</option><!-- end ngRepeat: sub in select_jabatan_sub.golongan_sub -->
+                      </select>
+                   </td>
+                 </tr>
+
+                  <tr>
+                   <td>Tanggal Masuk</td><td>:</td><td>
+                    <div class="input-group date" data-date-format="mm-dd-yyyy">
+                      <input class="form-control" type="text" value="12-02-2012" name="tgl_masuk" id="datepicker">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                    </div>
+
+                   </td>
+                  </tr>
+
+                 <tr>
+                   <td>Foto</td><td>:</td><td> <input type="file" id="select_file" name="foto" class="form-control"></td>
+                 </tr>
+                 <tr>
+
+               </tr></tbody></table>
+
+            </form></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-primary" id="btnSimpan">Simpan</button><br><br>
+             <!-- eof form -->
+        </div>
+
+        </div> <!-- ng-controller buat simpan -->
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+    </div>
+</div>
+
+<script src="./Payroll System_files/jquery-1.10.2.min.js"></script>
+<script src="./Payroll System_files/bootstrap.min.js"></script>
+<script src="./Payroll System_files/datepick.js"></script>
+<script src="./Payroll System_files/angular-file-upload-shim.min.js"></script>
+<script src="./Payroll System_files/angular.min.js"></script>
+<script src="./Payroll System_files/angular-route.min.js"></script>
+<script src="./Payroll System_files/angular-file-upload.js"></script>
+<script src="./Payroll System_files/angular-file-upload.min.js"></script>
+<script src="./Payroll System_files/promise-tracker.js"></script>
+<script src="./Payroll System_files/main.js"></script>
+
+<script>
+  $(document).ready(function() {
+    var $nav_samping = $('#nav_samping');
+    var $karyawan = $('#karyawan');
+    var $golongan = $('golongan');
+    var $lembur = $('#lembur');
+    var $prestasi = $('#prestasi');
+    var $laporan = $('#laporan');
+    var $pgbar = $('#pgbar');
+    $pgbar.hide();
+
+    var $selectFile = $('#select_file');
+
+
+
+  $('#datePicker').datepicker({
+         beforeShow: function() { $('#datePicker').css("z-index", 1051); },
+            autoclose: true,
+        });
+
+    $(document).on('change', '#select_file', function() {
+      $pgbar.removeAttr('style');
+    });
+
+      $('#btnTmbhLembur').click(function() {alert('hello');});
+
+      $('#nav_samping>li').click(function() {
+        $('#nav_samping>li.active').removeClass('active');
+        $(this).fadeIn("slow", function() {
+          $(this).addClass('active');
+        });
+
+      });
+
+  });
+</script>
+
+
+</body></html>
